@@ -9,12 +9,12 @@
 #精神支持：鸽子窝全体小伙伴，小休，大大
 #-------------------------------------------------------------------------------
 
-gamesFile="./dontstarve_dedicated_server_nullrenderer"
+gamesFile="./dontstarve_dedicated_server_nullrenderer_x64"
 MyDediServers="$HOME/.klei/DoNotStarveTogether/MyDediServer"
 dst_home=~/dst
 dst_shell_home=$(pwd)
 log_home="$dst_shell_home/dstgl_log.txt"
-gamesPath=~/dst/bin
+gamesPath=~/dst/bin64
 game=$dst_home/mods/dedicated_server_mods_setup.lua
 DST_HOME="${HOME}/dst"
 ugc_directory="${DST_HOME}/ugc_mods"
@@ -2076,7 +2076,7 @@ done
 }
 function run()
 {
-  echo 正在更新/下载模组
+#  echo 正在更新/下载模组
 #  modup
 	cd $MyDediServers
 		allsave=$(ls -l  | grep ^d | awk '{print $9}')
@@ -4909,7 +4909,7 @@ function Library()
   scriptfile=${release}_${mybit}.sh
   echo -e "\033[33m正在安装依赖库\033[0m"
   if [[ "${release}" != "centos" ]]; then
-#    sudo apt update && apt upgrade -y
+    sudo apt update && apt upgrade -y
         if grep -sq '^VERSION_ID="18.04"' /etc/os-release; then
                 requires=(lib32gcc1 lua5.3 screen wget git curl)
         else
